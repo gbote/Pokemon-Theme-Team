@@ -1,0 +1,41 @@
+
+<html>
+  {% load static %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
+  <head>
+    <title>Pokemon Theme Team</title>
+  </head>
+    <body>
+      <h1 class='title'>
+        <img class='logo' src="https://www.pngall.com/wp-content/uploads/13/Pokemon-Logo-PNG-Pic.png" alt="logo">
+      </h1>
+      <div id="poke-container" stlye="align-items:space-between;">
+        <div class="poke-card">
+          <div class="poke-img-container">
+          <img src={{pic}} alt="pokemon">
+          </div>
+          <div class="info">
+            <span class="number"></span>
+            <h3 class="name">{{info.name}}</h3>
+            <small class="type">Type: <strong>{{info.pok_type}}</strong> </small>
+            <h4>XP: 63</h4>
+          </div>
+        </div>
+
+
+        {% for pic in list %}
+        <div class="poke-card">
+          <div>
+            <img src={{pic.pic}} alt="">
+          </div>
+          <div class="info">
+            <span class="number">#7</span>
+            <h3 class="name">{{pic.name}}</h3>
+            <small class="type">Type: <span>{{pic.pok_type}}</span> </small>
+            <h4>XP: {{pic.base_exp}} </h4>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </body>
+</html>
